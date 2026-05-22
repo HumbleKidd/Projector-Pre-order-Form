@@ -215,6 +215,7 @@
             justify-content: center;
             gap: 8px;
             transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+            cursor: pointer;
         }
 
         .inline-btn:hover {
@@ -574,7 +575,8 @@
         .bank-row {
             display: flex;
             justify-content: space-between;
-            padding: 6px 0;
+            align-items: center;
+            padding: 8px 0;
             border-bottom: 1px dashed rgba(17,17,22,0.1);
             font-size: 0.85rem;
         }
@@ -591,6 +593,103 @@
         .bank-value {
             font-weight: 800;
             color: var(--text-dark);
+        }
+
+        /* Copy Button Feature Style */
+        .copy-acc-btn {
+            background: var(--text-dark);
+            color: #ffffff;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: transform 0.1s ease, background 0.2s ease;
+            margin-left: 6px;
+        }
+
+        .copy-acc-btn:hover {
+            background: var(--primary-neon);
+        }
+
+        .copy-acc-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* App Launcher Option Elements */
+        .app-launcher-wrapper {
+            margin: 14px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .launcher-btn {
+            background: #ffffff;
+            border: 2px solid var(--text-dark);
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 3px 3px 0 var(--text-dark);
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+
+        .launcher-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0 var(--text-dark);
+            background: #f7f9fc;
+        }
+
+        .launcher-btn:active {
+            transform: translate(1px, 1px);
+            box-shadow: 2px 2px 0 var(--text-dark);
+        }
+
+        .app-drawer-grid {
+            display: none;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            background: #f1f1f5;
+            padding: 10px;
+            border-radius: 12px;
+            border: 2px solid var(--text-dark);
+            animation: modalPop 0.25s ease-out;
+        }
+
+        .app-drawer-grid.open {
+            display: grid;
+        }
+
+        .app-link-card {
+            background: #ffffff;
+            border: 1px solid var(--text-dark);
+            border-radius: 8px;
+            padding: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            transition: background 0.2s ease;
+        }
+
+        .app-link-card:hover {
+            background: var(--accent-yellow);
         }
 
         .timing-notice {
@@ -752,6 +851,116 @@
             text-align: center;
             font-weight: 600;
         }
+
+        /* --- Live Congruent Sales Popup Notification Styles --- */
+        .ja-sales-popup {
+            position: fixed;
+            bottom: -120px;
+            left: 16px;
+            background: var(--card-base);
+            border: 2px solid var(--text-dark);
+            border-radius: 20px;
+            box-shadow: 5px 5px 0px var(--text-dark);
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 9995;
+            max-width: 380px;
+            width: calc(100% - 32px);
+            opacity: 0;
+            pointer-events: none;
+            transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+        }
+
+        .ja-sales-popup.active {
+            bottom: 90px; /* Elevated to completely avoid overlapping the action hub trigger */
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .ja-sales-icon-box {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary-neon), var(--accent-purple));
+            border: 2px solid var(--text-dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ja-sales-icon-box svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
+
+        .ja-sales-content {
+            flex-grow: 1;
+        }
+
+        .ja-sales-text {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .ja-sales-text strong {
+            font-weight: 800;
+            color: var(--primary-neon);
+        }
+
+        .ja-sales-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .ja-sales-verified {
+            color: #2e7d32;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        /* Global Toast Feedback Style */
+        .global-toast {
+            position: fixed;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text-dark);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            z-index: 100000;
+            transition: top 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .global-toast.show {
+            top: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .ja-sales-popup {
+                left: 12px;
+                width: calc(100% - 24px);
+            }
+            .ja-sales-popup.active {
+                bottom: 92px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -759,7 +968,7 @@
     <div class="wrapper">
         <!-- Brand Wordart Header -->
         <header>
-            <div class="brand-wordart">Unique Claims JA 😜</div>
+            <div class="brand-wordart">Stream Everything 😜</div>
             <h1>Watch Anything You Want Anytime!</h1>
             <p class="hero-sub">Get access to the absolute best Movies, TV Shows, Anime, and Live Cable TV channels. Works on your Smart Phone, Android Box, Tablet, and Laptop browser.</p>
         </header>
@@ -850,7 +1059,7 @@
 
         <!-- Share Button Distributed into Page Body -->
         <div style="margin: 24px 0;" class="reveal-element">
-            <a href="https://wa.me/?text=Yo!%20%F0%9F%98%B2%20You%20need%20to%20check%20out%20this%20streaming%20package.%20You%20can%20watch%20literally%20everything%E2%80%94movies,%20TV%20shows,%20anime,%20live%20cable%E2%80%94on%20your%20TV%20or%20box.%20Check%20out%20the%20live%20site%20here!%20%F0%9F%93%BA%F0%9F%94%A5" target=" <a href="https://uniqueclaimsja.store a/>" class="inline-btn share">🚀 Share Website with Friends</a>
+            <a href="https://api.whatsapp.com/send?text=Yo%20%F0%9F%98%B2%20You%20need%20to%20check%20out%20this%20streaming%20package.%20You%20can%20watch%20literally%20everything%E2%80%94movies%2C%20TV%20shows%2C%20anime%2C%20live%20cable%E2%80%94on%20your%20TV%20or%20box.%20Check%20out%20the%20live%20site%20here%F0%9F%93%BA%F0%9F%94%A5%20https%3A%2F%2Funiqueclaimsja.store" target="_blank" class="inline-btn share">🚀 Share Website with Friends</a>
         </div>
 
         <!-- Real-Time Interactive Utility Matrix -->
@@ -915,9 +1124,26 @@
                     <div class="bank-row"><span class="bank-label">Bank Name</span><span class="bank-value">National Commercial Bank (NCB)</span></div>
                     <div class="bank-row"><span class="bank-label">Name</span><span class="bank-value">Kyle Richards</span></div>
                     <div class="bank-row"><span class="bank-label">Account Type</span><span class="bank-value">Savings</span></div>
-                    <div class="bank-row"><span class="bank-label">Account #</span><span class="bank-value">504913848</span></div>
+                    <div class="bank-row">
+                        <span class="bank-label">Account #</span>
+                        <div style="display: flex; align-items: center;">
+                            <span class="bank-value" id="ncbAccountNum">504913848</span>
+                            <button type="button" class="copy-acc-btn" id="copyAccountBtn">📋 Copy</button>
+                        </div>
+                    </div>
                     <div class="bank-row"><span class="bank-label">Branch</span><span class="bank-value">Mandeville Perth Road</span></div>
                     <div class="bank-row"><span class="bank-label">Parish</span><span class="bank-value">Manchester</span></div>
+                </div>
+
+                <!-- Open Other Banking Apps Module Trigger -->
+                <div class="app-launcher-wrapper">
+                    <button type="button" class="launcher-btn" id="toggleAppDrawerBtn">📱 Open Online Banking Apps</button>
+                    <div class="app-drawer-grid" id="bankingAppDrawer">
+                        <a href="https://www.jncb.com" target="_blank" class="app-link-card">NCB Mobile</a>
+                        <a href="https://www.scotiabank.com/jm" target="_blank" class="app-link-card">Scotia Online</a>
+                        <a href="https://www.sagiconline.com" target="_blank" class="app-link-card">Sagicor eBank</a>
+                        <a href="https://www.jmmb.com" target="_blank" class="app-link-card">JMMB Moneyline</a>
+                    </div>
                 </div>
             </div>
 
@@ -940,16 +1166,33 @@
         <div class="hub-menu" id="hubMenu">
             <a href="https://wa.me/18765813521?text=Yo!%20I%20just%20saw%20the%20streaming%20package%20page%20and%20I%20need%20to%20get%20set%20up%20right%20now!%20%F0%9F%9A%80%F0%9F%93%BA" target="_blank" class="hub-option whatsapp">💬 WhatsApp Me</a>
             <a href="tel:18765813521" class="hub-option call">📞 Call Direct Line</a>
-            <a href="https://wa.me/?text=Yo!%20%F0%9F%98%B2%20You%20need%20to%20check%20out%20this%20streaming%20package.%20You%20can%20watch%20literally%20everything%E2%80%94movies,%20TV%20shows,%20anime,%20live%20cable%E2%80%94on%20your%20TV%20or%20box.%20Check%20out%20the%20live%20site%20here!%20%F0%9F%93%BA%F0%9F%94%A5" target="_blank" class="hub-option share">🚀 Share with Friends</a>
+            <a href="https://api.whatsapp.com/send?text=Yo%20%F0%9F%98%B2%20You%20need%20to%20check%20out%20this%20streaming%20package.%20You%20can%20watch%20literally%20everything%E2%80%94movies%2C%20TV%20shows%2C%20anime%2C%20live%20cable%E2%80%94on%20your%20TV%20or%20box.%20Check%20out%20the%20live%20site%20here%F0%9F%93%BA%F0%9F%94%A5%20https%3A%2F%2Funiqueclaimsja.store" target="_blank" class="hub-option share">🚀 Share with Friends</a>
         </div>
         <button class="main-hub-trigger" id="hubTrigger" title="Contact Info">⚡</button>
     </div>
+
+    <!-- Live Congruent Sales Activity Notification Structural Root Container -->
+    <div class="ja-sales-popup" id="jaLiveSalesWidget">
+        <div class="ja-sales-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <div class="ja-sales-content">
+            <p class="ja-sales-text" id="jaSalesNotificationText">Someone from Mandeville, Manchester ordered the Website Package for $4,000</p>
+            <div class="ja-sales-meta">
+                <span id="jaSalesTimeText">2 minutes ago</span>
+                <span class="ja-sales-verified">✓ Verified</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Confirmation Global Floating Feedback Notification -->
+    <div class="global-toast" id="globalToastFeedback">Copied to Clipboard!</div>
 
     <script>
         /* 😜 Click Animation Engine Implementation */
         document.addEventListener('click', function(e) {
             const targets = ['BUTTON', 'A', 'DIV', 'SPAN'];
-            const clickable = e.target.closest('.plan-card, .plan-cta, .pay-tab, .main-hub-trigger, .hub-option, #simulatorToggle, .modal-close, .inline-btn, .paypal-btn');
+            const clickable = e.target.closest('.plan-card, .plan-cta, .pay-tab, .main-hub-trigger, .hub-option, #simulatorToggle, .modal-close, .inline-btn, .paypal-btn, .copy-acc-btn, .launcher-btn, .app-link-card');
             
             if (clickable || targets.includes(e.target.tagName)) {
                 createWinkParticle(e.clientX, e.clientY);
@@ -1038,6 +1281,8 @@
         const modalPlanName = document.getElementById('modalPlanName');
         const modalPlanPrice = document.getElementById('modalPlanPrice');
         const modalClose = document.getElementById('modalClose');
+        const toggleAppDrawerBtn = document.getElementById('toggleAppDrawerBtn');
+        const bankingAppDrawer = document.getElementById('bankingAppDrawer');
 
         document.querySelectorAll('.plan-card').forEach(card => {
             card.querySelector('.plan-cta').addEventListener('click', (e) => {
@@ -1051,13 +1296,16 @@
             });
         });
 
-        modalClose.addEventListener('click', () => {
+        function closeModal() {
             modalOverlay.classList.remove('active');
-        });
+            bankingAppDrawer.classList.remove('open');
+            toggleAppDrawerBtn.textContent = '📱 Open Online Banking Apps';
+        }
 
+        modalClose.addEventListener('click', closeModal);
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('active');
+                closeModal();
             }
         });
 
@@ -1071,6 +1319,134 @@
                 document.getElementById(tab.getAttribute('data-target')).classList.add('active');
             });
         });
+
+        /* Premium Account Copy Paste Automation Mechanism */
+        const copyBtn = document.getElementById('copyAccountBtn');
+        const accountNumText = document.getElementById('ncbAccountNum').textContent;
+        const globalToast = document.getElementById('globalToastFeedback');
+
+        copyBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navigator.clipboard.writeText(accountNumText).then(() => {
+                globalToast.textContent = "Copied Account Number! 📋";
+                globalToast.classList.add('show');
+                setTimeout(() => {
+                    globalToast.classList.remove('show');
+                }, 2500);
+            }).catch(err => {
+                // Fallback approach if secure context issues emerge on native webview wrappers
+                const tempInput = document.createElement('input');
+                tempInput.value = accountNumText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                
+                globalToast.textContent = "Copied Account Number! 📋";
+                globalToast.classList.add('show');
+                setTimeout(() => {
+                    globalToast.classList.remove('show');
+                }, 2500);
+            });
+        });
+
+        /* Banking Deep Link/Drawer Expansion System */
+        toggleAppDrawerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            bankingAppDrawer.classList.toggle('open');
+            if (bankingAppDrawer.classList.contains('open')) {
+                toggleAppDrawerBtn.textContent = '✕ Close Banking Options';
+            } else {
+                toggleAppDrawerBtn.textContent = '📱 Open Online Banking Apps';
+            }
+        });
+
+        /* --- Live Active Sales Simulation Popup Logic Engine --- */
+        (function() {
+            // Comprehensive 14 Parish Map dataset with core localized distribution centers
+            const jaLocations = [
+                { town: "Mandeville", parish: "Manchester" },
+                { town: "Porus", parish: "Manchester" },
+                { town: "Christiana", parish: "Manchester" },
+                { town: "Kingston Town", parish: "Kingston" },
+                { town: "Harbour View", parish: "Kingston" },
+                { town: "Half Way Tree", parish: "St. Andrew" },
+                { town: "Constant Spring", parish: "St. Andrew" },
+                { town: "Gordon Town", parish: "St. Andrew" },
+                { town: "Montego Bay", parish: "St. James" },
+                { town: "Anchovy", parish: "St. James" },
+                { town: "Cambridge", parish: "St. James" },
+                { town: "Ocho Rios", parish: "St. Ann" },
+                { town: "Brown's Town", parish: "St. Ann" },
+                { town: "St. Ann's Bay", parish: "St. Ann" },
+                { town: "Spanish Town", parish: "St. Catherine" },
+                { town: "Portmore", parish: "St. Catherine" },
+                { town: "Old Harbour", parish: "St. Catherine" },
+                { town: "Linstead", parish: "St. Catherine" },
+                { town: "May Pen", parish: "Clarendon" },
+                { town: "Chapelton", parish: "Clarendon" },
+                { town: "Lionel Town", parish: "Clarendon" },
+                { town: "Savanna-la-Mar", parish: "Westmoreland" },
+                { town: "Negril", parish: "Westmoreland" },
+                { town: "Grange Hill", parish: "Westmoreland" },
+                { town: "Santa Cruz", parish: "St. Elizabeth" },
+                { town: "Black River", parish: "St. Elizabeth" },
+                { town: "Malvern", parish: "St. Elizabeth" },
+                { town: "Port Antonio", parish: "Portland" },
+                { town: "Buff Bay", parish: "Portland" },
+                { town: "Morant Bay", parish: "St. Thomas" },
+                { town: "Yallahs", parish: "St. Thomas" },
+                { town: "Port Maria", parish: "St. Mary" },
+                { town: "Annotto Bay", parish: "St. Mary" },
+                { town: "Highgate", parish: "St. Mary" },
+                { town: "Falmouth", parish: "Trelawny" },
+                { town: "Duncans", parish: "Trelawny" },
+                { town: "Lucea", parish: "Hanover" },
+                { town: "Green Island", parish: "Hanover" }
+            ];
+
+            const packages = [
+                { name: "Apps Only Package", price: "$2,500" },
+                { name: "Websites Only Package", price: "$4,000" },
+                { name: "Websites plus Apps", price: "$6,500" }
+            ];
+
+            const timePhrases = [
+                "Just now", "1 minute ago", "2 minutes ago", "3 minutes ago", 
+                "5 minutes ago", "12 minutes ago", "24 minutes ago", "42 minutes ago",
+                "1 hour ago", "2 hours ago"
+            ];
+
+            const popup = document.getElementById('jaLiveSalesWidget');
+            const textElement = document.getElementById('jaSalesNotificationText');
+            const timeElement = document.getElementById('jaSalesTimeText');
+
+            function triggerRandomNotification() {
+                const randomLoc = jaLocations[Math.floor(Math.random() * jaLocations.length)];
+                const randomPkg = packages[Math.floor(Math.random() * packages.length)];
+                const randomTime = timePhrases[Math.floor(Math.random() * timePhrases.length)];
+
+                textElement.innerHTML = `Someone from <strong>${randomLoc.town}, ${randomLoc.parish}</strong> ordered the <strong>${randomPkg.name}</strong> for <strong>${randomPkg.price}</strong>`;
+                timeElement.textContent = randomTime;
+
+                popup.classList.add('active');
+
+                // Retract after 6 seconds of exposure
+                setTimeout(function() {
+                    popup.classList.remove('active');
+                    scheduleNextNotification();
+                }, 6000);
+            }
+
+            function scheduleNextNotification() {
+                // Generates non-repeating natural delays ranging from 15 to 45 seconds
+                const randomDelay = Math.floor(Math.random() * (45000 - 15000 + 1)) + 15000;
+                setTimeout(triggerRandomNotification, randomDelay);
+            }
+
+            // Fire first instant notification check 3.5 seconds after presentation layer mounts
+            setTimeout(triggerRandomNotification, 3500);
+        })();
     </script>
 </body>
 </html>
