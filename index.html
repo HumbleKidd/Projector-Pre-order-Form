@@ -1,222 +1,1097 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Android Projector Bundle - Pre-Order</title>
-    <!-- Tailwind CSS for modern, fluid styling -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Google Fonts for a peaceful, premium aesthetic -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-            overflow-x: hidden;
-        }
-        /* Custom animated gradient mesh for a peaceful, living background */
-        .bg-mesh {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(165, 180, 252, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(199, 210, 254, 0.25) 0%, transparent 45%);
-            animation: pulseBg 12s ease-in-out infinite alternate;
-        }
-        @keyframes pulseBg {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
-        }
-        /* Custom Click Emoji Ripple Effect */
-        .emoji-ripple {
-            position: absolute;
-            pointer-events: none;
-            font-size: 24px;
-            animation: floatUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-            z-index: 9999;
-        }
-        @keyframes floatUp {
-            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
-            100% { transform: translate(-50%, -120px) scale(1.3); opacity: 0; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Smart Projector VIP Pre-Order</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg-base: #f0f4f8;
+      --surface: #ffffff;
+      --primary-gradient: linear-gradient(135deg, #ff007a 0%, #7928ca 50%, #2563eb 100%);
+      --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      --wa-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      --text-main: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --border-light: #e2e8f0;
+      --glow-purple: rgba(121, 40, 202, 0.16);
+      --glow-pink: rgba(255, 0, 122, 0.16);
+      --glow-green: rgba(16, 185, 129, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(255, 0, 122, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(0, 242, 254, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(121, 40, 202, 0.06) 0%, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      padding: 12px 12px 100px;
+      overflow-x: hidden;
+      line-height: 1.45;
+    }
+
+    .container {
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 4px 2px;
+      animation: fadeInDown 0.6s ease forwards;
+    }
+
+    .brand-mark {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-mark i {
+      animation: spinSlow 12s linear infinite;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+      border: 1px solid var(--border-light);
+    }
+
+    .pill-btn:active {
+      transform: scale(0.94);
+    }
+
+    .pill-btn.tiktok {
+      background: #000000;
+      color: #ffffff;
+      border-color: #000000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .pill-btn.share {
+      background: #ffffff;
+      color: var(--text-main);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .live-stock-ticker {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: 999px;
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.08);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #c2410c;
+      animation: pulseSubtle 3s infinite ease-in-out;
+    }
+
+    .ticker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ea580c;
+      box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7);
+      animation: ripple 1.8s infinite;
+    }
+
+    .banner-hero {
+      background: #ffffff;
+      border: 1.5px solid #ffffff;
+      border-radius: 18px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px var(--glow-purple);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .banner-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary-gradient);
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .tag-vip {
+      background: #fdf2f8;
+      color: #db2777;
+      border: 1px solid #fbcfe8;
+    }
+
+    .tag-unlocked {
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+    }
+
+    .hero-title {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 900;
+      line-height: 1.22;
+      letter-spacing: -0.6px;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .hero-title span {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      font-weight: 500;
+    }
+
+    .stream-alert {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #fed7aa;
+      border-left: 5px solid #f97316;
+      padding: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.08);
+      position: relative;
+    }
+
+    .stream-icon-box {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #ffedd5;
+      color: #ea580c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .stream-details {
+      font-size: 0.84rem;
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+
+    .stream-title {
+      font-weight: 900;
+      color: #0f172a;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-panel {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 20px;
+      border: 1.5px solid var(--border-light);
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+      position: relative;
+    }
+
+    .card-heading {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: -0.4px;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .name-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 420px) {
+      .name-duo {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .field-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .field-lbl {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #475569;
+    }
+
+    .input-shell {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-shell i.left-ico {
+      position: absolute;
+      left: 14px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      pointer-events: none;
+      transition: color 0.2s ease;
+    }
+
+    .form-ctrl {
+      width: 100%;
+      height: 48px;
+      padding: 0 14px 0 40px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border-light);
+      background: #f8fafc;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-ctrl:focus {
+      background: #ffffff;
+      border-color: #7928ca;
+      box-shadow: 0 0 0 3px var(--glow-purple);
+    }
+
+    .form-ctrl:focus ~ i.left-ico {
+      color: #7928ca;
+    }
+
+    select.form-ctrl {
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .chevron-ico {
+      position: absolute;
+      right: 14px;
+      pointer-events: none;
+      color: #94a3b8;
+      font-size: 0.75rem;
+    }
+
+    .btn-submit-order {
+      width: 100%;
+      height: 54px;
+      background: var(--wa-gradient);
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px var(--glow-green);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+      margin-top: 4px;
+    }
+
+    .btn-submit-order:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px var(--glow-green);
+    }
+
+    .btn-submit-order:active {
+      transform: scale(0.98);
+    }
+
+    .facts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .fact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+      background: #ffffff;
+    }
+
+    .fact-ico-badge {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--primary-gradient);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    .fact-desc {
+      font-size: 0.84rem;
+      color: var(--text-body);
+    }
+
+    .fact-desc strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      margin-bottom: 2px;
+    }
+
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 440px) {
+      .ideas-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .idea-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .idea-card:hover {
+      background: #ffffff;
+      border-color: #fbcfe8;
+      transform: translateY(-2px);
+    }
+
+    .idea-header {
+      font-weight: 800;
+      font-size: 0.84rem;
+      color: var(--text-main);
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .idea-header i {
+      color: #ff007a;
+    }
+
+    .idea-snippet {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .bottom-cta-panel {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1.5px solid var(--border-light);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px var(--glow-purple);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .bottom-cta-btn {
+      width: 100%;
+      height: 52px;
+      background: var(--primary-gradient);
+      color: #ffffff;
+      border: none;
+      border-radius: 14px;
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px var(--glow-pink);
+      text-decoration: none;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .bottom-cta-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .bottom-cta-btn:active {
+      transform: scale(0.98);
+    }
+
+    .fab-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .fab-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(15px) scale(0.9);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .fab-container.open .fab-menu {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+
+    .fab-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--border-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    .fab-item:active {
+      transform: scale(0.95);
+    }
+
+    .fab-item-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.8rem;
+    }
+
+    .fab-item.preorder .fab-item-icon { background: var(--primary-gradient); }
+    .fab-item.tiktok .fab-item-icon { background: #000000; }
+    .fab-item.share .fab-item-icon { background: #00f2fe; }
+
+    .fab-main-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      color: #ffffff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 10px 25px var(--glow-purple);
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .fab-container.open .fab-main-btn {
+      transform: rotate(45deg);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 9999;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-sheet {
+      background: #ffffff;
+      width: 100%;
+      max-width: 380px;
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transform: scale(0.95);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .modal-backdrop.active .modal-sheet {
+      transform: scale(1);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .modal-title {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--text-main);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .share-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .share-channel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      background: #f8fafc;
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .share-channel:hover {
+      background: #ffffff;
+      border-color: #7928ca;
+      transform: translateY(-2px);
+    }
+
+    .share-channel.wa i { color: #10b981; font-size: 1.4rem; }
+    .share-channel.fb i { color: #1877f2; font-size: 1.4rem; }
+    .share-channel.x i { color: #000000; font-size: 1.4rem; }
+    .share-channel.copy i { color: #64748b; font-size: 1.4rem; }
+
+    @keyframes ripple {
+      0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(234, 88, 12, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+    }
+
+    @keyframes pulseSubtle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8 relative selection:bg-indigo-100">
+<body>
 
-    <!-- Ambient background layer -->
-    <div class="bg-mesh"></div>
+  <div class="container">
+    <div class="top-nav">
+      <div class="brand-mark">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>UNIQUE CLAIMS JA</span>
+      </div>
+      <div class="nav-actions">
+        <button type="button" class="pill-btn share" onclick="toggleShareModal(true)">
+          <i class="fa-solid fa-arrow-up-from-bracket"></i> Share
+        </button>
+        <a href="https://www.tiktok.com/@uniqueclaimsjam" target="_blank" rel="noopener noreferrer" class="pill-btn tiktok">
+          <i class="fa-brands fa-tiktok"></i> @uniqueclaimsjam
+        </a>
+      </div>
+    </div>
 
-    <!-- Main Container -->
-    <main class="w-full max-w-lg bg-white/80 backdrop-blur-md rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 p-6 sm:p-8 transition-all duration-500 hover:shadow-[0_8px_40px_rgb(0,0,0,0.06)] opacity-0 translate-y-4 animate-[fadeIn_0.6s_ease-out_forwards]">
-        
-        <!-- Header Section -->
-        <header class="text-center mb-8">
-            <div class="inline-block bg-indigo-50 text-indigo-600 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-3 animate-pulse">
-                Free Pre-Order List
+    <div class="live-stock-ticker">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span class="ticker-dot"></span>
+        <span>High Pre-Order Demand</span>
+      </div>
+      <span>Pre-Orders Open</span>
+    </div>
+
+    <div class="banner-hero">
+      <div class="hero-tags">
+        <div class="tag-chip tag-vip"><i class="fa-solid fa-bolt"></i> VIP Allocation</div>
+        <div class="tag-chip tag-unlocked"><i class="fa-solid fa-unlock"></i> Free Streaming</div>
+      </div>
+      <h1 class="hero-title">Android Cinema Projector <span>Ultra Bundle</span></h1>
+      <p class="hero-text">Transform any room, wall, or ceiling into a stunning personal movie theater with zero technical hassle.</p>
+    </div>
+
+    <div class="stream-alert">
+      <div class="stream-icon-box">
+        <i class="fa-solid fa-film"></i>
+      </div>
+      <div class="stream-details">
+        <div class="stream-title">
+          <span>Fully Loaded System</span>
+          <i class="fa-solid fa-circle-check" style="color: #ea580c; font-size: 0.85rem;"></i>
+        </div>
+        Netflix comes pre-installed by default, and the system arrives completely unlocked and loaded so you can stream the latest trending movies, full TV series, anime releases, and endless online entertainment totally free.
+      </div>
+    </div>
+
+    <div class="card-panel" id="preorderSection">
+      <div class="card-heading">
+        <i class="fa-solid fa-pen-to-square" style="color: #7928ca;"></i>
+        <span>Pre-Order Reservation</span>
+      </div>
+
+      <form id="preorderForm" onsubmit="handleWhatsAppSubmit(event)" class="form-layout">
+        <div class="name-duo">
+          <div class="field-wrap">
+            <label class="field-lbl" for="fName">First Name</label>
+            <div class="input-shell">
+              <input type="text" id="fName" class="form-ctrl" placeholder="First Name" required autocomplete="given-name">
+              <i class="fa-solid fa-user left-ico"></i>
             </div>
-            <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight leading-tight">
-                Smart Android <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Projector Bundle</span>
-            </h1>
-            <p class="text-sm text-gray-500 mt-2 max-w-sm mx-auto">
-                Secure yours today. No upfront payment required. Fill out the short form below to lock in your bundle.
-            </p>
-        </header>
-
-        <!-- Form Section -->
-        <form id="preorderForm" class="space-y-5">
-            
-            <!-- Full Name Input -->
-            <div>
-                <label for="fullName" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">First & Last Name</label>
-                <input type="text" id="fullName" required placeholder="John Doe" 
-                    class="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-gray-400 text-gray-700">
+          </div>
+          <div class="field-wrap">
+            <label class="field-lbl" for="lName">Last Name</label>
+            <div class="input-shell">
+              <input type="text" id="lName" class="form-ctrl" placeholder="Last Name" required autocomplete="family-name">
+              <i class="fa-solid fa-user left-ico"></i>
             </div>
+          </div>
+        </div>
 
-            <!-- Phone Number Input with Auto Formatting -->
-            <div>
-                <label for="phoneNumber" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">Phone Number</label>
-                <div class="relative">
-                    <input type="tel" id="phoneNumber" required placeholder="(876) 555-5555" 
-                        class="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-gray-400 text-gray-700">
-                </div>
-                <p class="text-[11px] text-gray-400 mt-1">Format: 10-digit number</p>
-            </div>
+        <div class="field-wrap">
+          <label class="field-lbl" for="telContact">Phone / WhatsApp Number</label>
+          <div class="input-shell">
+            <input type="tel" id="telContact" class="form-ctrl" placeholder="876-000-0000" required autocomplete="tel">
+            <i class="fa-solid fa-phone left-ico"></i>
+          </div>
+        </div>
 
-            <!-- Location Input -->
-            <div>
-                <label for="location" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">Your Location</label>
-                <input type="text" id="location" required placeholder="e.g. Kingston, St. James, Manchester" 
-                    class="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-gray-400 text-gray-700">
-            </div>
+        <div class="field-wrap">
+          <label class="field-lbl" for="parishSelect">Parish Selection</label>
+          <div class="input-shell">
+            <select id="parishSelect" class="form-ctrl" required>
+              <option value="" disabled selected>Select parish for collection/delivery</option>
+              <option value="Manchester">Manchester</option>
+              <option value="Kingston">Kingston</option>
+              <option value="St. Andrew">St. Andrew</option>
+              <option value="St. Catherine">St. Catherine</option>
+              <option value="Clarendon">Clarendon</option>
+              <option value="St. Elizabeth">St. Elizabeth</option>
+              <option value="Westmoreland">Westmoreland</option>
+              <option value="Hanover">Hanover</option>
+              <option value="St. James">St. James</option>
+              <option value="Trelawny">Trelawny</option>
+              <option value="St. Ann">St. Ann</option>
+              <option value="St. Mary">St. Mary</option>
+              <option value="Portland">Portland</option>
+              <option value="St. Thomas">St. Thomas</option>
+            </select>
+            <i class="fa-solid fa-location-dot left-ico"></i>
+            <i class="fa-solid fa-chevron-down chevron-ico"></i>
+          </div>
+        </div>
 
-            <!-- Delivery Method Selection (Custom Radio) -->
-            <div>
-                <span class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3">Fulfillment Preference</span>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <label class="relative flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer bg-gray-50/30 hover:bg-gray-50 transition-all has-[:checked]:border-indigo-500 has-[:checked]:bg-indigo-50/30">
-                        <input type="radio" name="deliveryMethod" value="Knutsford Express" required class="accent-indigo-600 h-4 w-4">
-                        <span class="ml-3 text-sm font-medium text-gray-700">Knutsford Express</span>
-                    </label>
-                    <label class="relative flex items-center p-3 border border-gray-200 rounded-xl cursor-pointer bg-gray-50/30 hover:bg-gray-50 transition-all has-[:checked]:border-indigo-500 has-[:checked]:bg-indigo-50/30">
-                        <input type="radio" name="deliveryMethod" value="Pick up in Mandeville" required class="accent-indigo-600 h-4 w-4">
-                        <span class="ml-3 text-sm font-medium text-gray-700">Pick up in Mandeville</span>
-                    </label>
-                </div>
-            </div>
+        <div class="field-wrap">
+          <label class="field-lbl" for="qtySelect">Quantity Selection</label>
+          <div class="input-shell">
+            <select id="qtySelect" class="form-ctrl" required>
+              <option value="1" selected>1 Unit</option>
+              <option value="2">2 Units</option>
+              <option value="3">3 Units</option>
+              <option value="4">4 Units</option>
+              <option value="5">5 Units</option>
+              <option value="6+">6+ Units (Bulk Order)</option>
+            </select>
+            <i class="fa-solid fa-boxes-stacked left-ico"></i>
+            <i class="fa-solid fa-chevron-down chevron-ico"></i>
+          </div>
+        </div>
 
-            <!-- Bank Selection & Important Notice -->
-            <div class="pt-2 border-t border-gray-100">
-                <label for="bankSelect" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">Which bank do you use for online banking?</label>
-                <select id="bankSelect" required class="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-gray-700 text-sm">
-                    <option value="" disabled selected>Select your bank...</option>
-                    <option value="NCB">NCB (National Commercial Bank)</option>
-                    <option value="Scotiabank">Scotiabank</option>
-                    <option value="JN Bank">JN Bank</option>
-                    <option value="Sagicor">Sagicor Bank</option>
-                    <option value="CIBC FirstCaribbean">CIBC FirstCaribbean</option>
-                    <option value="Other">Other Bank / Transfer App</option>
-                </select>
+        <button type="submit" class="btn-submit-order">
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.35rem;"></i>
+          <span>Lock In Pre-Order on WhatsApp</span>
+        </button>
+      </form>
+    </div>
 
-                <!-- Informational Note Box -->
-                <div class="mt-3 bg-amber-50/60 border border-amber-200/70 rounded-xl p-3.5 space-y-1.5 text-xs text-amber-800 leading-relaxed">
-                    <p class="font-medium flex items-center gap-1.5 text-amber-900">
-                        📌 Important Transfer Info:
-                    </p>
-                    <p>Our official account is hosted with <strong>NCB (Mandeville Location)</strong>.</p>
-                    <p class="opacity-90">Please note that cross-transfers made to our NCB account from a <span class="font-semibold underline decoration-amber-500/50">third-party bank</span> will face processing delays, sometimes taking up to <strong>two (2) business days</strong> to clear.</p>
-                </div>
-            </div>
+    <div class="card-panel">
+      <div class="card-heading">
+        <i class="fa-solid fa-star" style="color: #ff007a;"></i>
+        <span>5 Key Projector Facts</span>
+      </div>
+      <div class="facts-list">
+        <div class="fact-card">
+          <div class="fact-ico-badge"><i class="fa-solid fa-bed"></i></div>
+          <div class="fact-desc">
+            <strong>180° Ceiling Rotation</strong>
+            Pivot the angle smoothly from the front wall straight up to your bedroom ceiling so you can watch movies while lying flat in bed.
+          </div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-ico-badge"><i class="fa-solid fa-expand"></i></div>
+          <div class="fact-desc">
+            <strong>Scales Up To 130 Inches</strong>
+            Enjoy a giant, theater-scale picture on any blank wall without the cost or space requirements of a heavy physical TV.
+          </div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-ico-badge"><i class="fa-solid fa-wifi"></i></div>
+          <div class="fact-desc">
+            <strong>Dual-Band Wi-Fi 6 + Bluetooth 5.0</strong>
+            Lightning-fast buffer-free streaming with instant wireless pairing to external Bluetooth speakers or AirPods.
+          </div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-ico-badge"><i class="fa-solid fa-mobile-screen"></i></div>
+          <div class="fact-desc">
+            <strong>Wireless Phone Mirroring</strong>
+            Cast photos, mobile videos, TikToks, and presentations directly from your iPhone or Android device in 1 touch.
+          </div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-ico-badge"><i class="fa-solid fa-sliders"></i></div>
+          <div class="fact-desc">
+            <strong>Auto Keystone & Focus Precision</strong>
+            Maintains a crisp, perfectly rectangular picture automatically, even when projecting from side angles or slanted surfaces.
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <!-- Submit Button Layer -->
-            <div class="pt-3">
-                <button type="submit" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all transform active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:ring-offset-2 cursor-pointer flex items-center justify-center gap-2">
-                    <span>Add Me To Pre-order</span> 😜
-                </button>
-            </div>
-        </form>
-    </main>
+    <div class="card-panel">
+      <div class="card-heading">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color: #00f2fe;"></i>
+        <span>Ways To Enjoy It</span>
+      </div>
+      <div class="ideas-grid">
+        <div class="idea-card">
+          <div class="idea-header"><i class="fa-solid fa-clapperboard"></i> Anime & Movie Nights</div>
+          <div class="idea-snippet">Binge full anime series, cinema releases, and trending TV series on a gigantic display with friends.</div>
+        </div>
+        <div class="idea-card">
+          <div class="idea-header"><i class="fa-solid fa-gamepad"></i> Big-Screen Gaming</div>
+          <div class="idea-snippet">Connect your PS5, Xbox, or Switch directly via HDMI for high-speed action on a massive wall display.</div>
+        </div>
+        <div class="idea-card">
+          <div class="idea-header"><i class="fa-solid fa-moon"></i> Ambient Visuals</div>
+          <div class="idea-snippet">Project cozy fireplace visuals, digital art backdrops, or relaxing starry views across your living space.</div>
+        </div>
+        <div class="idea-card">
+          <div class="idea-header"><i class="fa-solid fa-suitcase"></i> Portable Travel</div>
+          <div class="idea-snippet">Compact, lightweight design makes it effortless to pack for road trips, weekend getaways, and staycations.</div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Custom Micro-interactions & Logic Script -->
-    <script>
-        // 1. Signature Brand Emoji Tap Dynamic Animation
-        document.addEventListener('click', (e) => {
-            const ripple = document.createElement('div');
-            ripple.classList.add('emoji-ripple');
-            ripple.textContent = '😜';
-            ripple.style.left = `${e.clientX}px`;
-            ripple.style.top = `${e.clientY + window.scrollY}px`;
-            
-            document.body.appendChild(ripple);
-            
-            // Clean up node after animation ends
-            setTimeout(() => {
-                ripple.remove();
-            }, 800);
-        });
+    <div class="bottom-cta-panel">
+      <div style="font-family:'Cabinet Grotesk', sans-serif; font-size:1.3rem; font-weight:900; letter-spacing:-0.4px;">
+        Ready To Reserve Yours?
+      </div>
+      <p style="font-size:0.86rem; color:var(--text-muted); max-width:380px;">
+        Secure your bundle now with direct collection or islandwide delivery arranged over WhatsApp.
+      </p>
+      <button type="button" class="bottom-cta-btn" onclick="scrollToForm()">
+        <i class="fa-solid fa-arrow-up"></i>
+        <span>Continue To Pre-Order Form</span>
+      </button>
+    </div>
+  </div>
 
-        // 2. Automated Smart Phone Number Formatting
-        const phoneInput = document.getElementById('phoneNumber');
-        phoneInput.addEventListener('input', (e) => {
-            let input = e.target.value.replace(/\D/g, ''); // strip non-digits
-            if (input.length > 10) input = input.substring(0, 10);
-            
-            // Format dynamically as user types: (XXX) XXX-XXXX
-            let formatted = '';
-            if (input.length > 0) {
-                formatted += '(' + input.substring(0, 3);
-            }
-            if (input.length >= 4) {
-                formatted += ') ' + input.substring(3, 6);
-            }
-            if (input.length >= 7) {
-                formatted += '-' + input.substring(6, 10);
-            }
-            e.target.value = formatted;
-        });
+  <div class="fab-container" id="fabContainer">
+    <div class="fab-menu">
+      <div class="fab-item preorder" onclick="scrollToForm()">
+        <span>Pre-Order Form</span>
+        <div class="fab-item-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+      </div>
+      <a href="https://www.tiktok.com/@uniqueclaimsjam" target="_blank" rel="noopener noreferrer" class="fab-item tiktok">
+        <span>TikTok Profile</span>
+        <div class="fab-item-icon"><i class="fa-brands fa-tiktok"></i></div>
+      </a>
+      <div class="fab-item share" onclick="toggleShareModal(true); toggleFab();">
+        <span>Share Page</span>
+        <div class="fab-item-icon"><i class="fa-solid fa-share-nodes"></i></div>
+      </div>
+    </div>
+    <button type="button" class="fab-main-btn" onclick="toggleFab()" aria-label="Quick Actions">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
 
-        // 3. Clean Format Output & Form Submission Handlers
-        const form = document.getElementById('preorderForm');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+  <div class="modal-backdrop" id="shareModal" onclick="toggleShareModal(false)">
+    <div class="modal-sheet" onclick="event.stopPropagation()">
+      <div class="modal-head">
+        <div class="modal-title">Share Pre-Order</div>
+        <button type="button" class="close-btn" onclick="toggleShareModal(false)"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="share-grid">
+        <a href="#" class="share-channel wa" onclick="shareToWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="#" class="share-channel fb" onclick="shareToFacebook()">
+          <i class="fa-brands fa-facebook"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="#" class="share-channel x" onclick="shareToTwitter()">
+          <i class="fa-brands fa-x-twitter"></i>
+          <span>X / Twitter</span>
+        </a>
+        <button type="button" class="share-channel copy" onclick="copyPageUrl()">
+          <i class="fa-solid fa-copy"></i>
+          <span id="copyFeedback">Copy Link</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
-            // Extract the validated values
-            const name = document.getElementById('fullName').value.trim();
-            const phone = phoneInput.value.trim();
-            const location = document.getElementById('location').value.trim();
-            const delivery = document.querySelector('input[name="deliveryMethod"]:checked').value;
-            const userBank = document.getElementById('bankSelect').value;
+  <script>
+    const PHONE_TARGET = '18765813521';
 
-            /* ==========================================================
-               NEAT DATA FORMAT FOR YOU (Seen in browser dev console)
-               ========================================================== */
-            console.log("=== NEW PRE-ORDER ENTRY ===");
-            console.log(`Customer: ${name}`);
-            console.log(`Phone:    ${phone}`);
-            console.log(`Location: ${location}`);
-            console.log(`Logistics: ${delivery}`);
-            console.log(`User Bank: ${userBank}`);
-            console.log("===========================");
+    function scrollToForm() {
+      const formEl = document.getElementById('preorderSection');
+      if (formEl) {
+        formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => {
+          document.getElementById('fName').focus();
+        }, 450);
+      }
+      const fab = document.getElementById('fabContainer');
+      if (fab.classList.contains('open')) {
+        fab.classList.remove('open');
+      }
+    }
 
-            // Automated message configuration for deployment tracking
-            const autoMessage = `Add me to pre-order list for the Smart Android Projector Bundle! Details: Name: ${name} | Phone: ${phone}.`;
-            console.log("Auto-Message generated:", autoMessage);
+    function toggleFab() {
+      document.getElementById('fabContainer').classList.toggle('open');
+    }
 
-            // Redirect user directly to your specified TikTok Profile
-            window.location.href = "https://www.tiktok.com/@18765813521";
-        });
+    function handleWhatsAppSubmit(e) {
+      e.preventDefault();
 
-        // Small entry fading helper injection animation style
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes fadeIn {
-                to { opacity: 1; transform: translateY(0); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+      const fName = document.getElementById('fName').value.trim();
+      const lName = document.getElementById('lName').value.trim();
+      const phone = document.getElementById('telContact').value.trim();
+      const parish = document.getElementById('parishSelect').value;
+      const qty = document.getElementById('qtySelect').value;
+
+      if (!fName || !lName || !phone || !parish) {
+        alert('Please fill out all required fields.');
+        return;
+      }
+
+      const orderPayload = 
+`⚡ *SMART PROJECTOR PRE-ORDER* ⚡
+━━━━━━━━━━━━━━━━━━━━━
+👤 *Customer:* ${fName} ${lName}
+📱 *Phone:* ${phone}
+📍 *Parish:* ${parish}
+📦 *Quantity:* ${qty} Unit(s)
+🎁 *Package:* Fully Loaded Smart Cinema Bundle
+━━━━━━━━━━━━━━━━━━━━━
+_Sent via Online Pre-Order Page_`;
+
+      const targetUrl = `https://wa.me/${PHONE_TARGET}?text=${encodeURIComponent(orderPayload)}`;
+      window.open(targetUrl, '_blank');
+    }
+
+    function toggleShareModal(show) {
+      const modal = document.getElementById('shareModal');
+      if (show) {
+        modal.classList.add('active');
+      } else {
+        modal.classList.remove('active');
+      }
+    }
+
+    function shareToWhatsApp() {
+      const url = encodeURIComponent(window.location.href);
+      const msg = encodeURIComponent('Check out the Fully Loaded Smart Projector pre-order: ');
+      window.open(`https://wa.me/?text=${msg}${url}`, '_blank');
+      toggleShareModal(false);
+    }
+
+    function shareToFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+      toggleShareModal(false);
+    }
+
+    function shareToTwitter() {
+      const url = encodeURIComponent(window.location.href);
+      const msg = encodeURIComponent('Pre-order the Fully Loaded Smart Projector bundle: ');
+      window.open(`https://twitter.com/intent/tweet?text=${msg}&url=${url}`, '_blank');
+      toggleShareModal(false);
+    }
+
+    function copyPageUrl() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const copyTxt = document.getElementById('copyFeedback');
+        copyTxt.textContent = 'Copied!';
+        copyTxt.style.color = '#10b981';
+        setTimeout(() => {
+          copyTxt.textContent = 'Copy Link';
+          copyTxt.style.color = '';
+          toggleShareModal(false);
+        }, 1200);
+      });
+    }
+
+    document.addEventListener('click', function(e) {
+      const fab = document.getElementById('fabContainer');
+      if (!fab.contains(e.target) && fab.classList.contains('open')) {
+        fab.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
